@@ -1,0 +1,14 @@
+{
+  "name": "core",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Tom Lee <tom@bwdmonkey.dev>",
+  "license": "MIT",
+  "private": false,
+  "dependencies": {
+    "fastify": "^3.9.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.7"
+  }
+}
