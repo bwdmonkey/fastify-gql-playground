@@ -6,7 +6,7 @@ function BookDetails(props) {
       variables: { id: props.bookId },
   })
 
-  if (loading || error) return <div>No book selected.</div>;
+  if (loading || error) return <></>;
 
   const { book } = data;
 
