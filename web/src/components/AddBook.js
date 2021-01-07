@@ -26,6 +26,7 @@ function AddBook() {
 
   const submitForm = (e) => {
     e.preventDefault()
+    if (!book.name || !book.genre || !book.authorId) return
     addBook({
       variables: {
         name: book.name,
@@ -48,8 +49,8 @@ function AddBook() {
       </div>
       <div className="field">
         <label>Author:</label>
-        <select onChange={(e) => setBook({ ...book, authorId: e.target.value })}>
-          <option disabled>Select author</option>
+        <select preventDefault onChange={(e) => setBook({ ...book, authorId: e.target.value })}>
+          <option selected="true" disabled="disabled" value="">Select author</option>
           {displayAuthors(authorsQuery)}
         </select>
       </div>
