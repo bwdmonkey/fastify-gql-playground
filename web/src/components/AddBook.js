@@ -20,7 +20,7 @@ function AddBook() {
     genre: "",
     authorId: "",
   })
-  const query = useQuery(getAuthorsQuery)
+  const authorsQuery = useQuery(getAuthorsQuery)
   const [addBook, { data }] = useMutation(addBookMutation)
 
 
@@ -50,7 +50,7 @@ function AddBook() {
         <label>Author:</label>
         <select onChange={(e) => setBook({ ...book, authorId: e.target.value })}>
           <option disabled>Select author</option>
-          {displayAuthors(query)}
+          {displayAuthors(authorsQuery)}
         </select>
       </div>
       <button>+</button>
