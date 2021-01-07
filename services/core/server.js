@@ -1,5 +1,12 @@
 // Require the framework and instantiate it
 const fastify = require('fastify')({ logger: true })
+const mercurius = require('mercurius')
+const schema = require('./schema/schema')
+
+fastify.register(mercurius, {
+  schema,
+  graphiql: true,
+})
 
 // Declare a route
 fastify.get('/', async (request, reply) => {
