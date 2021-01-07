@@ -1,7 +1,7 @@
 import { useQuery } from '@apollo/client';
 import { getBooksQuery } from '../queries/queries'
 
-const displayBooks = (books) => {
+function displayBooks(books) {
   return (
     <ul id="book-list">
       {books.map(book => (
