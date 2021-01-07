@@ -6,6 +6,9 @@ const mongoose = require('mongoose')
 
 const schema = require('./schema/schema')
 
+// allow CORS
+fastify.register(require('fastify-cors'), {})
+
 mongoose.connect(process.env.DATABASE_URL)
 mongoose.connection.once('open', () => {
   console.log('connceted to database')
