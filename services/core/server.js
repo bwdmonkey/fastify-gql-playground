@@ -1,7 +1,15 @@
 // Require the framework and instantiate it
+require('dotenv').config()
 const fastify = require('fastify')({ logger: true })
 const mercurius = require('mercurius')
+const mongoose = require('mongoose')
+
 const schema = require('./schema/schema')
+
+mongoose.connect(process.env.DATABASE_URL)
+mongoose.connection.once('open', () => {
+  console.log('connceted to database')
+})
 
 fastify.register(mercurius, {
   schema,
